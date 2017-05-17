@@ -4,4 +4,4 @@ CountdownTimer
 
 This component is use to redirect Website when times up;
 
-change you url and deadline;
+To use component simply change the url and time;
