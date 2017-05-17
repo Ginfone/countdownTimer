@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirect</title>
+  <style>
+  #countdownTimer{
+    font-family:font-family:"Microsoft YaHei","微软雅黑","Hiragino Sans GB",sans-serif;
+    text-align: center;
+    font-size:36px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    -webkit-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+  }
+  #countdownTimer span{
+    font-size:60px;
+  }
+  </style>
+</head>
+<body>
+  <div id="countdownTimer"></div>
+  <script>
+  //Baidu Analyse
+  var _hmt = _hmt || [];
+  (function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c0534580876c9b296ded7e753246c237";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+  })();
+  //redirect
+  var final="May 17,2017 23:00:00"; //You deadline here!  (Month day, Year HH:MM:SS);
+  var url ="https://www.seed.hym-originals.com/eng-seed-black";//URL Here
+
+  var countdownTimer =setInterval(function(){
+    var g = new Date(final);
+    var gt = g.getTime();
+    var d = new Date();
+    var dt = d.getTime();
+    var remainTime = gt-dt;
+    var day = Math.floor(remainTime/(1000*60*60*24));
+    var hours = Math.floor(remainTime%(1000*60*60*24)/(1000*60*60));
+    var minutes = Math.floor(remainTime%(1000*60*60)/(1000*60));
+    var seconds = Math.floor(remainTime%(1000*60)/1000);
+    document.getElementById('countdownTimer').innerHTML = "距离众筹开始还有 </br>" + "<span>"+day +"D " +hours +"H " + minutes + "M " + seconds +"S</span>";
+    if (remainTime < 0){
+      window.location.replace(url);
+    }
+  },1000);
+
+  </script>
+</body>
+</html>
