@@ -34,7 +34,7 @@
   })();
   //redirect
   var final="May 17,2017 23:00:00"; //You deadline here!  (Month day, Year HH:MM:SS);
-  var url ="https://www.seed.hym-originals.com/eng-seed-black";//URL Here
+  var url ="https://www.kickstarter.com/projects/427061651/seed-turntable-quality-power-and-design-in-one-set/description";//URL Here
 
   var countdownTimer =setInterval(function(){
     var g = new Date(final);
@@ -48,6 +48,7 @@
     var seconds = Math.floor(remainTime%(1000*60)/1000);
     document.getElementById('countdownTimer').innerHTML = "距离众筹开始还有 </br>" + "<span>"+day +"D " +hours +"H " + minutes + "M " + seconds +"S</span>";
     if (remainTime < 0){
+      clearInterval(countdownTimer);
       document.getElementById('countdownTimer').innerHTML ="众筹已开始，页面跳转中";
       window.location.replace(url);
     }
