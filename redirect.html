@@ -48,6 +48,7 @@
     var seconds = Math.floor(remainTime%(1000*60)/1000);
     document.getElementById('countdownTimer').innerHTML = "距离众筹开始还有 </br>" + "<span>"+day +"D " +hours +"H " + minutes + "M " + seconds +"S</span>";
     if (remainTime < 0){
+      document.getElementById('countdownTimer').innerHTML ="众筹已开始，页面跳转中";
       window.location.replace(url);
     }
   },1000);
